@@ -3,16 +3,18 @@
 int main(void) {
 	int howMany;
 	scanf("%d", &howMany);
+	int i = 0;
 	int sumOne = 0;
 	int sumTwo = 0;
-	int person = 0;
-	for(int i = 0; i < howMany; i++) {
-		scanf("%d", &person);
-		sumOne = sumOne + person;
+	int num = 0;
+	for(i=0;i<(howMany*2);i++) {
+		scanf("%d", &num);
+		if (i % 2 == 0) {
+			sumOne = sumOne + num;
+		} else {
+			sumTwo = sumTwo + num;
+		}
 	}
-	for(int i = 0; i < howMany; i++) {                                                                                              scanf("%d", &person);
-                sumTwo = sumTwo + person;
-        }
 	if (sumOne > sumTwo) {
 		printf("Team 1 has an advantage\n");
 		printf("Total weight for team 1: %d\n", sumOne);
@@ -23,4 +25,5 @@ int main(void) {
                 printf("Total weight for team 2: %d\n", sumTwo);
 	}
 	return 0;
+
 }
